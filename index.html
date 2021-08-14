@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Metadata-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="C/GPA calculator" />
+        <meta name="author" content="Micah Lau" />
+        
+        <title>Grade calculator</title>
+
+        <link rel="stylesheet" href="main.css"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1 class="title">C/GPA and target CGPA calculator</h1>
+                <p class="text">
+                    Use this website to calculate your current term GPA, your CGPA, or GPA needed to reach a target CGPA.
+                    This website also has the added feature of switching between light and dark mode.
+                </p>
+                <br>
+                <label for="toggleMOde">Toggle light/dark mode:</label><br><br>
+                <button id="toggleMode">Hit me with a flashbang</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <div class="row">
+                <h4 class="subtitle">Please select a calculator mode:</h4>
+                <button id="selectCgpaCalcBtn" class="dark-selected-btn" onclick="openCgpaPane()">C/GPA Calculator</button>
+                <button id="selectTargetCgpaCalcBtn" onclick="openTargetCgpaPane()">Target CGPA calculator</button>   
+                <br>
+                <br>     
+            </div>
+
+            <div id="cgpaPane" class="cgpa-pane dark-pane-border">
+                <form id="cgpaPaneForm">
+                    <ul id="cgpaCourseList">
+                        <p class="text">
+                            Calculate your term GPA and CGPA based on your anticipated grades.
+                            To calculate your term GPA, input 0 for both current CGPA and total units attempted.
+                        </p>
+
+                        <label for="currCgpa">Current CGPA:</label><br>
+                        <input type="text" id="currCgpa" name="currCgpa" placeholder="0 to 4.33"><br><br>
+                        <label for="unitsAttempted">Total units attempted:</label><br>
+                        <input type="text" id="unitsAttempted" name="unitsAttempted"><br><br>
+
+                        <!-- Course 1-->
+                        <li class="course">
+                            <label>Course 1:</label><br>
+                            <select name="anticipatedGrade-c1" id="anticipatedGrade-c1">
+                                <option value="" disabled selected>Anticipated grade</option>
+                                <option value="4.33">A+</option>
+                                <option value="4.00">A</option>
+                                <option value="3.67">A-</option>
+                                <option value="3.33">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.67">B-</option>
+                                <option value="2.33">C+</option>
+                                <option value="2.00">C</option>
+                                <option value="1.67">C-</option>
+                                <option value="1.00">D</option>
+                                <option value="0.00">F</option>
+                            </select><br>
+                            <input type="text" id="units-c1" name="units-c1" placeholder="Number of units"><br><br>
+                        </li>
+
+                        <!-- Course 2-->
+                        <li class="course">
+                            <label>Course 2:</label><br>
+                            <select name="anticipatedGrade-c2" id="anticipatedGrade-c2">
+                                <option value="" disabled selected>Anticipated grade</option>
+                                <option value="4.33">A+</option>
+                                <option value="4.00">A</option>
+                                <option value="3.67">A-</option>
+                                <option value="3.33">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.67">B-</option>
+                                <option value="2.33">C+</option>
+                                <option value="2.00">C</option>
+                                <option value="1.67">C-</option>
+                                <option value="1.00">D</option>
+                                <option value="0.00">F</option>
+                            </select><br>
+                            <input type="text" id="units-c2" name="units-c2" placeholder="Number of units"><br><br>
+                        </li>
+
+                        <!-- Course 3-->
+                        <li class="course"> 
+                            <label>Course 3:</label><br>
+                            <select name="anticipatedGrade-c3" id="anticipatedGrade-c3">
+                                <option value="" disabled selected>Anticipated grade</option>
+                                <option value="4.33">A+</option>
+                                <option value="4.00">A</option>
+                                <option value="3.67">A-</option>
+                                <option value="3.33">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.67">B-</option>
+                                <option value="2.33">C+</option>
+                                <option value="2.00">C</option>
+                                <option value="1.67">C-</option>
+                                <option value="1.00">D</option>
+                                <option value="0.00">F</option>
+                            </select><br>
+                            <input type="text" id="units-c3" name="units-c3" placeholder="Number of units"><br><br>
+                        </li>
+
+                        <!-- Course 4-->
+                        <li class="course"> 
+                            <label>Course 4:</label><br>
+                            <select name="anticipatedGrade-c4" id="anticipatedGrade-c4">
+                                <option value="" disabled selected>Anticipated grade</option>
+                                <option value="4.33">A+</option>
+                                <option value="4.00">A</option>
+                                <option value="3.67">A-</option>
+                                <option value="3.33">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.67">B-</option>
+                                <option value="2.33">C+</option>
+                                <option value="2.00">C</option>
+                                <option value="1.67">C-</option>
+                                <option value="1.00">D</option>
+                                <option value="0.00">F</option>
+                            </select><br>
+                            <input type="text" id="units-c4" name="units-c4" placeholder="Number of units"><br><br>
+                        </li>
+
+                        <br><br><button type="button" id="calculateCgpaBtn" onclick="calculateCgpa()">Calculate C/GPA</button>
+                        <button type="button" id="resetCgpaCalcBtn" onclick="resetCalculateCgpa()">Reset</button><br><br>
+
+                        <div id="cgpaPaneResult" class="cgpa-pane-result">
+                            <p id="calculatedCgpa" class="text">
+                            </p>
+                        </div>
+
+                    </ul>
+                
+                </form>
+            </div>
+
+            <div id="targetCgpaPane" class="target-cgpa-pane">
+                <form id="targetCgpaPaneForm">
+                    <ul id="targetCgpaInfoList">
+                        <p class="text">
+                            Calculate the GPA you need in the upcoming semester in order to reach your target CGPA.
+                        </p>
+
+                        <label for="currCgpaForTarget">Current CGPA:</label><br>
+                        <input type="text" id="currCgpaForTarget" name="currCgpaForTarget" placeholder="0 to 4.33"><br><br>
+                        <label for="unitsAttemptedForTarget">Total units attempted:</label><br>
+                        <input type="text" id="unitsAttemptedForTarget" name="unitsAttemptedForTarget"><br><br>
+                        <label for="currUnits">Total units enrolled in:</label><br>
+                        <input type="text" id="currUnits" name="currUnits"><br><br>
+                        <label for="targetCgpa">Target CGPA:</label><br>
+                        <input type="text" id="targetCgpa" name="targetCgpa" placeholder="0 to 4.33"><br><br>
+
+                        <br><br><button type="button" id="calculateRequiredGpaBtn" onclick="calculateTargetCgpa()">Calculate required GPA</button>
+                        <button type="button" id="resetRequiredGpaCalcBtn" onclick="resetCalculateTargetCgpa()">Reset</button><br><br>
+
+                        <div id="targetCgpaPaneResult" class="target-cgpa-pane-result">
+                            <p id="calculatedTargetCgpa" class="text">
+                            </p>
+                        </div>
+
+                    </ul>
+                
+                </form>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+        <noscript>Please enable JavaScript to view the full site.</noscript>
+    
+    </body>
+
+</html>

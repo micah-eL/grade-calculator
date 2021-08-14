@@ -1,0 +1,91 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+}
+label {
+    font-size: 1.25rem;
+    margin: 1px 0;
+}
+input {
+    font-size: 1rem;
+    margin: 1px 0;
+}
+select {
+    font-size: 1rem;
+    margin: 1px 0;
+    cursor: pointer;
+}
+button {
+    font-size: 1.25rem;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.body-light {
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+}
+.subtitle {
+    font-size: 1.5rem;
+}
+.text {
+    font-size: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    padding: 16px;
+}
+
+.row {
+    margin: 16px 20px;
+}
+
+.dark-selected-btn {
+    background-color: #900d09;
+    color: #fff;
+}
+.dark-selected-btn:hover {
+    background-color: #bc544b;
+}
+.light-selected-btn {
+    background-color: #bc544b;
+    color: #000;
+}
+.light-selected-btn:hover {
+    background-color: #900d09;
+}
+
+.cgpa-pane {
+    margin: 16px 20px;
+    padding: 4px 8px;
+}
+.cgpa-pane-result {
+    display: none;
+}
+
+.target-cgpa-pane {
+    display: none;
+    margin: 16px 20px;
+    padding: 4px 8px;
+}
+.target-cgpa-pane-result {
+    display: none;
+}
+
+.dark-pane-border {
+    border: 2px solid white;
+}
+.light-pane-border {
+    border: 2px solid black;
+}
+
+.course {
+    list-style-type: none;
+}
